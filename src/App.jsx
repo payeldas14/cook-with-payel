@@ -203,11 +203,13 @@ function RecipeCard({ recipe, onDeleteRecipe }) {
         <article className="recipe-card">
           <div className="recipe-card-media">
             <img className="recipe-image" src={recipe.image || FALLBACK_IMAGE} alt="" loading="lazy" />
-            <span className="badge badge--overlay">{recipe.category}</span>
-            <span className="badge badge--overlay badge--overlay-time">
-              <FaRegClock aria-hidden="true" />
-              {formatCookingTime(recipe.cookingTimeMins)}
-            </span>
+            <div className="recipe-badge-row">
+              <span className="badge badge--overlay">{recipe.category}</span>
+              <span className="badge badge--overlay badge--overlay-time">
+                <FaRegClock aria-hidden="true" />
+                {formatCookingTime(recipe.cookingTimeMins)}
+              </span>
+            </div>
           </div>
           <div className="recipe-content">
             <h3 className="recipe-card-title">{recipe.title}</h3>
